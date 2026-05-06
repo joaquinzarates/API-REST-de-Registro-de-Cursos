@@ -5,22 +5,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.List;
 
+@Entity
+@Table(name = "instructores")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "categorias")
+public class Instructor {
 
-public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 150)
     private String nombre;
 
-    @Column(length = 500)
-    private String descripcion;
+    @Column(length = 200)
+    private String especialidad;
 
-
+    @Column(nullable = false, length = 100, unique = true)
+    private String email;
 }
