@@ -24,4 +24,7 @@ public class Instructor {
 
     @Column(nullable = false, length = 100, unique = true)
     private String email;
+
+    @OneToMany(mappedBy = "instructor", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Curso> cursos;
 }
