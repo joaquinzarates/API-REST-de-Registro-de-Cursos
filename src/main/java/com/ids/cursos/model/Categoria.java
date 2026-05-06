@@ -22,5 +22,7 @@ public class Categoria {
     @Column(length = 500)
     private String descripcion;
 
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Curso> cursos;
 
 }
