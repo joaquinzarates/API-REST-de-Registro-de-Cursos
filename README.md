@@ -39,16 +39,14 @@ API REST segura para gestionar cursos, categorías e instructores, desarrollada 
  
 ### Prerrequisitos
 - Java 21 instalado
-- Maven instalado
+
+  
 ### Pasos
  
 ```bash
 # Clonar el repositorio
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/joaquinzarates/API-REST-de-Registro-de-Cursos.git
 cd registro-cursos
- 
-# Compilar y ejecutar
-mvn spring-boot:run
 ```
  
 La aplicación iniciará en `http://localhost:8080`
@@ -64,7 +62,37 @@ La aplicación iniciará en `http://localhost:8080`
 | Rol      | `ADMIN`       |
  
 ---
- 
+## Datos de prueba
+
+Para poblar la base de datos con datos de ejemplo, ejecuta los siguientes comandos en orden:
+
+### Categorías
+
+```bash
+curl -X POST http://localhost:8080/api/categorias -H "Content-Type: application/json" -u admin:password123 -d "{\"name\":\"Programacion\",\"descripcion\":\"Cursos de programacion\"}"
+curl -X POST http://localhost:8080/api/categorias -H "Content-Type: application/json" -u admin:password123 -d "{\"name\":\"Diseno Web\",\"descripcion\":\"Cursos de diseno y frontend\"}"
+curl -X POST http://localhost:8080/api/categorias -H "Content-Type: application/json" -u admin:password123 -d "{\"name\":\"Base de Datos\",\"descripcion\":\"Cursos de SQL y NoSQL\"}"
+```
+
+### Instructores
+
+```bash
+curl -X POST http://localhost:8080/api/instructores -H "Content-Type: application/json" -u admin:password123 -d "{\"name\":\"Juan Perez\",\"especialidad\":\"Java y Spring\",\"email\":\"juan@example.com\"}"
+curl -X POST http://localhost:8080/api/instructores -H "Content-Type: application/json" -u admin:password123 -d "{\"name\":\"Maria Lopez\",\"especialidad\":\"Frontend\",\"email\":\"maria@example.com\"}"
+curl -X POST http://localhost:8080/api/instructores -H "Content-Type: application/json" -u admin:password123 -d "{\"name\":\"Carlos Ruiz\",\"especialidad\":\"Base de Datos\",\"email\":\"carlos@example.com\"}"
+```
+
+### Cursos
+
+```bash
+curl -X POST http://localhost:8080/api/cursos -H "Content-Type: application/json" -u admin:password123 -d "{\"name\":\"Spring Boot Basico\",\"descripcion\":\"Aprende Spring Boot desde cero\",\"duracionHoras\":40,\"nivel\":\"BASICO\",\"categoria\":{\"id\":1},\"instructor\":{\"id\":1}}"
+curl -X POST http://localhost:8080/api/cursos -H "Content-Type: application/json" -u admin:password123 -d "{\"name\":\"Spring Security\",\"descripcion\":\"Seguridad en aplicaciones Spring\",\"duracionHoras\":30,\"nivel\":\"INTERMEDIO\",\"categoria\":{\"id\":1},\"instructor\":{\"id\":1}}"
+curl -X POST http://localhost:8080/api/cursos -H "Content-Type: application/json" -u admin:password123 -d "{\"name\":\"HTML y CSS\",\"descripcion\":\"Fundamentos de desarrollo web\",\"duracionHoras\":20,\"nivel\":\"BASICO\",\"categoria\":{\"id\":2},\"instructor\":{\"id\":2}}"
+curl -X POST http://localhost:8080/api/cursos -H "Content-Type: application/json" -u admin:password123 -d "{\"name\":\"SQL Avanzado\",\"descripcion\":\"Consultas avanzadas y optimizacion\",\"duracionHoras\":50,\"nivel\":\"AVANZADO\",\"categoria\":{\"id\":3},\"instructor\":{\"id\":3}}"
+curl -X POST http://localhost:8080/api/cursos -H "Content-Type: application/json" -u admin:password123 -d "{\"name\":\"Microservicios\",\"descripcion\":\"Arquitectura de microservicios con Spring\",\"duracionHoras\":60,\"nivel\":\"AVANZADO\",\"categoria\":{\"id\":1},\"instructor\":{\"id\":1}}"
+```
+
+> **Nota:** La base de datos H2 es en memoria. Al reiniciar la aplicación los datos se pierden y deben recrearse. 
 ## URLs importantes
  
 | Recurso       | URL                                      |
@@ -79,8 +107,9 @@ La aplicación iniciará en `http://localhost:8080`
 |------------|--------------------------|
 | JDBC URL   | `jdbc:h2:mem:cursos_db`  |
 | User Name  | `sa`                     |
-| Password   | *(vacío)*                |
- 
+| Password   |                          |
+
+- **el valor del password es un espacio vacio**
 ---
  
 ## Endpoints disponibles
