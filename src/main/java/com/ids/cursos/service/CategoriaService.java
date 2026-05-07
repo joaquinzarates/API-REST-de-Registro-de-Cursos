@@ -24,12 +24,12 @@ public class CategoriaService {
     }
 
     public Categoria crear(Categoria categoria) {
-        if (categoria.getNombre() == null || categoria.getNombre().isBlank()) {
+        if (categoria.getName() == null || categoria.getName().isBlank()) {
             throw new BadRequestException("El nombre de la categoría no puede estar vacío");
         }
 
-        if (categoriaRepository.existsByName(categoria.getNombre())) {
-            throw new BadRequestException("Ya existe una categoría con el nombre: " + categoria.getNombre());
+        if (categoriaRepository.existsByName(categoria.getName())) {
+            throw new BadRequestException("Ya existe una categoría con el nombre: " + categoria.getName());
         }
 
         return categoriaRepository.save(categoria);
@@ -38,8 +38,8 @@ public class CategoriaService {
     public Categoria actualizar(Long id, Categoria categoriaActualizada) {
         Categoria categoria = obtenerPorId(id);
 
-        if (categoriaActualizada.getNombre() != null && !categoriaActualizada.getNombre().isBlank()) {
-            categoria.setNombre(categoriaActualizada.getNombre());
+        if (categoriaActualizada.getName() != null && !categoriaActualizada.getName().isBlank()) {
+            categoria.setName(categoriaActualizada.getName());
         }
 
         if (categoriaActualizada.getDescripcion() != null) {

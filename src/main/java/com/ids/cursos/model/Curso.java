@@ -19,7 +19,7 @@ public class Curso {
 
     @NotBlank(message = "El nombre no puede estar vacio")
     @Column(nullable = false, length = 150)
-    private String nombre;
+    private String name;
 
     @Column(length = 1000)
     private String descripcion;

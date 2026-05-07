@@ -17,7 +17,7 @@ public class Instructor {
     private Long id;
 
     @Column(nullable = false, length = 150)
-    private String nombre;
+    private String name;
 
     @Column(length = 200)
     private String especialidad;

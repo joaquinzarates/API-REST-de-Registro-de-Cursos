@@ -15,7 +15,7 @@ public interface CursoRepository extends JpaRepository<Curso, Long> {
 
     List<Curso> findByInstructorId(Long instructorId);
 
-    List<Curso> findByNombreContainingIgnoreCase(String name);
+    List<Curso> findByNameContainingIgnoreCase(String name);
 
     boolean existsByCategoriaId(Long categoriaId);
 

@@ -24,7 +24,7 @@ public class InstructorService {
     }
 
     public Instructor crear(Instructor instructor) {
-        if (instructor.getNombre() == null || instructor.getNombre().isBlank()) {
+        if (instructor.getName() == null || instructor.getName().isBlank()) {
             throw new BadRequestException("El nombre del instructor no puede estar vacío");
         }
 
@@ -42,8 +42,8 @@ public class InstructorService {
     public Instructor actualizar(Long id, Instructor instructorActualizado) {
         Instructor instructor = obtenerPorId(id);
 
-        if (instructorActualizado.getNombre() != null && !instructorActualizado.getNombre().isBlank()) {
-            instructor.setNombre(instructorActualizado.getNombre());
+        if (instructorActualizado.getName() != null && !instructorActualizado.getName().isBlank()) {
+            instructor.setName(instructorActualizado.getName());
         }
 
         if (instructorActualizado.getEspecialidad() != null) {

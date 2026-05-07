@@ -43,8 +43,8 @@ public class CursoService {
     public Curso actualizar(Long id, Curso cursoActualizado) {
         Curso curso = obtenerPorId(id);
 
-        if (cursoActualizado.getNombre() != null && !cursoActualizado.getNombre().isBlank()) {
-            curso.setNombre(cursoActualizado.getNombre());
+        if (cursoActualizado.getName() != null && !cursoActualizado.getName().isBlank()) {
+            curso.setName(cursoActualizado.getName());
         }
 
         if (cursoActualizado.getDescripcion() != null) {
@@ -98,11 +98,11 @@ public class CursoService {
         if (nombre == null || nombre.isBlank()) {
             throw new BadRequestException("El campo de nombre en la busqueda no puede estar vacío");
         }
-        return cursoRepository.findByNombreContainingIgnoreCase(nombre);
+        return cursoRepository.findByNameContainingIgnoreCase(nombre);
     }
 
     private void validarCurso(Curso curso) {
-        if (curso.getNombre() == null || curso.getNombre().isBlank()) {
+        if (curso.getName() == null || curso.getName().isBlank()) {
             throw new BadRequestException("El nombre del curso no puede estar vacio");
         }
 
