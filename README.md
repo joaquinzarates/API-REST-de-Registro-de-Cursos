@@ -300,11 +300,12 @@ registro-cursos/
  
 ## Contacto
  
-[Tu Nombre] - [tu@email.com]
+[Joaquin Zárate] - [joaquin.zarate@ids.com]
  
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [Link del Repositorio](https://github.com/joaquinzarates/API-REST-de-Registro-de-Cursos)
  
 <p align="right">(<a href="#readme-top">Regresar al Inicio</a>)</p>
+
 ---
  
 <!-- MARKDOWN LINKS & BADGES -->
