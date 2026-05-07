@@ -4,7 +4,7 @@
 [![Spring Boot][spring-shield]][spring-url]
 [![Maven][maven-shield]][maven-url]
 [![H2][h2-shield]][h2-url]
-# API RESTful de Registro de Cursos en Línea
+# API RESTful de Registro de Cursos
  
 API REST segura para gestionar cursos, categorías e instructores, desarrollada con Spring Boot 3.x, Spring Security (HTTP Basic), Spring Data JPA y base de datos H2 en memoria.
  
@@ -300,13 +300,12 @@ registro-cursos/
  
 ## Contacto
  
-[Joaquin Zárate] - [joaquin.zarate@ids.com]
+Joaquin Zárate - [joaquin.zarate@ids.com]
  
-Project Link: [Link del Repositorio](https://github.com/joaquinzarates/API-REST-de-Registro-de-Cursos)
+Link del Repositorio: [API RESTful de Registro de Cursos](https://github.com/joaquinzarates/API-REST-de-Registro-de-Cursos)
  
 <p align="right">(<a href="#readme-top">Regresar al Inicio</a>)</p>
 
----
  
 <!-- MARKDOWN LINKS & BADGES -->
 [java-shield]: https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white
