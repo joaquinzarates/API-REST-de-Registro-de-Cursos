@@ -27,7 +27,7 @@ API REST segura para gestionar cursos, categorías e instructores, desarrollada 
  
 - Java 21
 - Spring Boot 3.2.0
-- Spring Security 6.x (HTTP Basic Authentication)
+- Spring Security 6 (HTTP Basic Authentication)
 - Spring Data JPA + Hibernate
 - H2 Database (en memoria)
 - SpringDoc OpenAPI 2.x (Swagger UI)
@@ -44,12 +44,13 @@ API REST segura para gestionar cursos, categorías e instructores, desarrollada 
 ### Pasos
  
 ```bash
-# Clonar el repositorio
+# 1) Clonar el repositorio:
 git clone https://github.com/joaquinzarates/API-REST-de-Registro-de-Cursos.git
-cd registro-cursos
+2) Abrir el proyecto en intelliJ IDEA
+3) Presionar botón Run y automáticamente ejecutará RegistroCursosApplication
+4) Ingrsar a http://localhost:8080/swagger-ui.html para ver los 3 controladores (Cursos, Categorías, Instructores)
 ```
- 
-La aplicación iniciará en `http://localhost:8080`
+
  
 ---
  
@@ -64,7 +65,7 @@ La aplicación iniciará en `http://localhost:8080`
 ---
 ## Datos de prueba
 
-Para poblar la base de datos con datos de ejemplo, ejecuta los siguientes comandos en orden:
+Para dotar la base de datos con registros de ejemplo, se ejecutan los siguientes comandos en orden mediante terminal:
 
 ### Categorías
 
@@ -92,7 +93,7 @@ curl -X POST http://localhost:8080/api/cursos -H "Content-Type: application/json
 curl -X POST http://localhost:8080/api/cursos -H "Content-Type: application/json" -u admin:password123 -d "{\"name\":\"Microservicios\",\"descripcion\":\"Arquitectura de microservicios con Spring\",\"duracionHoras\":60,\"nivel\":\"AVANZADO\",\"categoria\":{\"id\":1},\"instructor\":{\"id\":1}}"
 ```
 
-> **Nota:** La base de datos H2 es en memoria. Al reiniciar la aplicación los datos se pierden y deben recrearse. 
+> **Nota:** La base de datos H2 es en memoria. Al reiniciar la aplicación los datos se pierden y deben volverse a ejecutar. 
 ## URLs importantes
  
 | Recurso       | URL                                      |
