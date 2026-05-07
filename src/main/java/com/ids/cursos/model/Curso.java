@@ -1,4 +1,5 @@
 package com.ids.cursos.model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -32,11 +33,14 @@ public class Curso {
     @Column(nullable = false)
     private NivelCurso nivel;
 
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "categoria_id", nullable = false)
+    @JsonBackReference("categoria-cursos")
     private Categoria categoria;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "instructor_id", nullable = false)
+    @JsonBackReference("instructor-cursos")
     private Instructor instructor;
 }

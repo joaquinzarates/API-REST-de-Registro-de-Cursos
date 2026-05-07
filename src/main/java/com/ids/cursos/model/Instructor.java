@@ -1,4 +1,5 @@
 package com.ids.cursos.model;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,5 +27,6 @@ public class Instructor {
     private String email;
 
     @OneToMany(mappedBy = "instructor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference("instructor-cursos")
     private List<Curso> cursos;
 }
