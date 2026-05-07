@@ -21,7 +21,7 @@ API REST segura para gestionar cursos, categorías e instructores, desarrollada 
     <li><a href="#códigos-de-respuesta-http">Códigos HTTP</a></li>
   </ol>
 </details>
----
+
  
 ## Tecnologías utilizadas
  
